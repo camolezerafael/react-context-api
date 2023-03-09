@@ -1,14 +1,14 @@
-import React, {useContext} from 'react';
-import {AppCtx} from "./Context";
+import React, { useContext } from 'react'
+import { AppCtx } from './Context'
 
 export default function Counter() {
-	const {state,dispatch} = useContext(AppCtx)
+	const { state, dispatch } = useContext( AppCtx )
 
 	return (
 		<div>
-			<h4>{state.counter}</h4>
-			<button type="button" onClick={() => dispatch({ key:'ADD' })}> Counter + </button>
-			<button type="button" onClick={() => dispatch({ key:'DEC' })}> Counter - </button>
+			<h4>{ state.counter }</h4>
+			<button type="button" onClick={ () => dispatch( { type: 'ADD' } ) }> Counter +</button>
+			<button type="button" onClick={ () => dispatch( { type: 'DEC' } ) }> Counter -</button>
 		</div>
-	);
+	)
 }
